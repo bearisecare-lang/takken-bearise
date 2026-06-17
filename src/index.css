@@ -1,0 +1,10 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #0C1520;
+  min-height: 100vh;
+  /* iPhoneのセーフエリア対応 */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+* { -webkit-tap-highlight-color: transparent; }

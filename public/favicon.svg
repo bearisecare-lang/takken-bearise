@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0C1520"/>
+  <path d="M256 110 L410 240 L370 240 L370 400 L296 400 L296 300 L216 300 L216 400 L142 400 L142 240 L102 240 Z" fill="#C9A84C"/>
+  <text x="256" y="468" font-family="serif" font-size="64" font-weight="bold" fill="#C9A84C" text-anchor="middle">宅建</text>
+</svg>
