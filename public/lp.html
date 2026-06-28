@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宅建士 合格ナビ プレミアム｜BEARISE</title>
+<meta name="description" content="宅建士試験の合格に特化した学習アプリ。目標管理・全科目の動画教材・過去問約2,800問・弱点分析が、このアプリだけで完成。無料体験から始められます。">
+<style>
+  :root{
+    --teal:#5C9B8E; --teal-d:#4A8478; --teal-l:#7DB3A7; --teal-pale:#EAF2F0;
+    --ink:#23282b; --ink-soft:#4f565b; --ink-mute:#828a90;
+    --bg:#ffffff; --bg-soft:#f6f8f7; --line:#e3e8e6;
+    --wood:#6f6358;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;
+    color:var(--ink); line-height:2.0; background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+
+  /* ヘッダー */
+  .topbar{background:var(--teal);position:sticky;top:0;z-index:50;}
+  .topbar-in{max-width:880px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .logo{font-size:15.5px;font-weight:700;color:#fff;letter-spacing:.03em;}
+  .topnav{display:flex;gap:22px;}
+  .topnav a{font-size:13px;color:rgba(255,255,255,.88);text-decoration:none;transition:.15s;border-bottom:1px solid transparent;padding-bottom:2px;}
+  .topnav a:hover{border-color:rgba(255,255,255,.7);}
+  @media(max-width:720px){.topnav{display:none;}}
+
+  /* ヒーロー */
+  .hero{position:relative;background:var(--teal-pale);padding:84px 24px 80px;text-align:center;overflow:hidden;border-bottom:1px solid var(--line);}
+  .hero-mark{font-size:13px;letter-spacing:.32em;color:var(--teal-d);font-weight:700;margin-bottom:26px;}
+  .hero h1{font-size:clamp(28px,5.6vw,46px);font-weight:900;line-height:1.5;color:var(--ink);letter-spacing:.02em;}
+  .hero h1 em{font-style:normal;color:var(--teal-d);box-shadow:inset 0 -12px 0 rgba(125,179,167,.35);}
+  .hero-sub{font-size:clamp(14px,2.1vw,16.5px);color:var(--ink-soft);margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;}
+  .hero-btns{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;font-size:15px;font-weight:700;padding:15px 34px;border-radius:4px;text-decoration:none;transition:.2s;letter-spacing:.02em;}
+  .btn-main{background:var(--teal);color:#fff;}
+  .btn-main:hover{background:var(--teal-d);}
+  .btn-sub{background:#fff;border:1px solid var(--teal);color:var(--teal-d);}
+  .btn-sub:hover{background:var(--teal-pale);}
+
+  /* セクション */
+  section{padding:78px 0;}
+  .eyebrow{font-size:12px;letter-spacing:.26em;color:var(--teal-d);font-weight:700;text-align:center;margin-bottom:14px;}
+  .sec-title{font-size:clamp(22px,3.8vw,30px);font-weight:800;color:var(--ink);text-align:center;line-height:1.5;letter-spacing:.02em;}
+  .sec-intro{max-width:660px;margin:26px auto 0;text-align:center;font-size:15px;color:var(--ink-soft);line-height:2.1;}
+  .soft{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* 完成バナー（数字帯の代わり） */
+  .complete{background:var(--teal);color:#fff;text-align:center;padding:62px 24px;}
+  .complete-lead{font-size:13px;letter-spacing:.2em;color:rgba(255,255,255,.8);margin-bottom:22px;font-weight:700;}
+  .complete-list{display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:680px;margin:0 auto 28px;}
+  .complete-list li{list-style:none;font-size:clamp(16px,3vw,21px);font-weight:700;padding:8px 22px;position:relative;}
+  .complete-list li:not(:last-child)::after{content:"／";position:absolute;right:-4px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-weight:400;}
+  .complete-punch{font-size:clamp(22px,5vw,34px);font-weight:900;letter-spacing:.04em;line-height:1.5;}
+  .complete-punch u{text-decoration:none;border-bottom:3px solid rgba(255,255,255,.55);padding-bottom:3px;}
+
+  /* サービス（番号リスト・絵文字なし） */
+  .svc-list{max-width:760px;margin:0 auto;}
+  .svc-item{display:flex;gap:28px;padding:34px 0;border-bottom:1px solid var(--line);}
+  .svc-item:last-child{border-bottom:none;}
+  .svc-no{font-size:15px;font-weight:800;color:var(--teal);letter-spacing:.1em;flex-shrink:0;width:38px;padding-top:4px;border-top:2px solid var(--teal);height:fit-content;}
+  .svc-body h3{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.02em;}
+  .svc-body p{font-size:14.5px;color:var(--ink-soft);line-height:2.0;}
+  @media(max-width:600px){.svc-item{gap:18px;}}
+
+  /* 模試診断 訴求（診断イメージ付き） */
+  .diag{background:var(--teal-pale);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .diag-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;margin-top:46px;}
+  .diag-text h3{font-size:clamp(20px,3.4vw,27px);font-weight:800;color:var(--ink);line-height:1.6;margin-bottom:20px;}
+  .diag-text h3 em{font-style:normal;color:var(--teal-d);}
+  .diag-text p{font-size:14.5px;color:var(--ink-soft);line-height:2.1;margin-bottom:18px;}
+  .diag-points{list-style:none;}
+  .diag-points li{font-size:14.5px;color:var(--ink);padding-left:24px;position:relative;margin-bottom:12px;line-height:1.7;}
+  .diag-points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;background:var(--teal);border-radius:2px;transform:rotate(45deg);}
+  .diag-points b{color:var(--teal-d);}
+  /* 診断結果モック */
+  .mock{background:#0f1c28;border-radius:14px;padding:30px 26px;box-shadow:0 18px 44px rgba(15,28,40,.28);color:#e6eef4;}
+  .mock-head{font-size:11px;letter-spacing:.2em;color:#7f9bb5;text-align:center;margin-bottom:18px;}
+  .mock-score{text-align:center;padding-bottom:18px;border-bottom:1px solid #22384c;}
+  .mock-score .n{font-size:54px;font-weight:900;color:#C9A84C;line-height:1;}
+  .mock-score .n small{font-size:.32em;color:#9fb6c9;font-weight:700;margin-left:3px;}
+  .mock-score .c{font-size:12px;color:#9fb6c9;margin-top:8px;}
+  .mock-grade{display:inline-block;margin-top:12px;font-size:12px;font-weight:800;color:#0f1c28;background:#C9A84C;border-radius:5px;padding:4px 14px;letter-spacing:.05em;}
+  .mock-subj{padding-top:18px;}
+  .mock-row{display:flex;align-items:center;gap:10px;margin-bottom:11px;font-size:12.5px;}
+  .mock-row .lbl{width:96px;color:#cdd9e3;flex-shrink:0;}
+  .mock-row .bar{flex:1;height:7px;background:#1a2c3c;border-radius:4px;overflow:hidden;}
+  .mock-row .bar i{display:block;height:100%;background:linear-gradient(90deg,#C9A84C,#E0C46A);border-radius:4px;}
+  .mock-row .pc{width:34px;text-align:right;color:#C9A84C;font-weight:700;}
+  @media(max-width:760px){.diag-grid{grid-template-columns:1fr;gap:34px;}.mock{max-width:380px;margin:0 auto;}}
+
+  /* 学習の流れ */
+  .flow{max-width:720px;margin:46px auto 0;}
+  .flow-item{display:flex;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
+  .flow-item:last-child{border-bottom:none;}
+  .flow-no{flex-shrink:0;font-family:Georgia,serif;font-size:30px;font-weight:700;color:var(--teal-l);line-height:1;width:46px;}
+  .flow-txt h3{font-size:16.5px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+  .flow-txt p{font-size:14px;color:var(--ink-soft);line-height:2.0;}
+
+  /* 想い */
+  .omoi{text-align:center;}
+  .omoi-body{max-width:680px;margin:40px auto 0;font-size:15.5px;color:var(--ink-soft);line-height:2.3;}
+  .omoi-body p+p{margin-top:20px;}
+  .omoi-sign{margin-top:34px;font-size:13px;color:var(--ink-mute);letter-spacing:.05em;}
+
+  /* CTA */
+  .cta{background:var(--teal);color:#fff;text-align:center;padding:84px 24px;}
+  .cta h2{font-size:clamp(22px,4.2vw,32px);font-weight:800;line-height:1.6;margin-bottom:18px;}
+  .cta p{font-size:15px;color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 36px;line-height:2.1;}
+  .cta .btn-main{background:#fff;color:var(--teal-d);}
+  .cta .btn-main:hover{background:var(--teal-pale);}
+
+  /* 特商法 */
+  .info{background:var(--bg-soft);border-top:1px solid var(--line);}
+  .info-table{max-width:760px;margin:44px auto 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;}
+  .info-row{display:flex;border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row dt{flex:0 0 35%;background:#fbfcfb;padding:15px 18px;font-size:13px;font-weight:700;color:var(--ink);}
+  .info-row dd{flex:1;padding:15px 18px;font-size:13px;color:var(--ink-soft);line-height:1.8;}
+  .info-row dd small{color:var(--ink-mute);font-size:11.5px;}
+  @media(max-width:600px){.info-row{flex-direction:column;}.info-row dt{flex:none;}}
+
+  /* フッター */
+  footer{background:#2b3a3f;color:#9fb0b3;text-align:center;padding:42px 24px 34px;}
+  .foot-logo{font-size:15px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:.03em;}
+  .foot-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+  .foot-links a{font-size:12.5px;color:#c2cfd1;text-decoration:none;transition:.15s;}
+  .foot-links a:hover{color:#fff;}
+  .foot-copy{font-size:11px;color:#7e8f92;line-height:1.9;border-top:1px solid #3a4a4f;padding-top:20px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="logo">宅建士 合格ナビ プレミアム</div>
+    <nav class="topnav">
+      <a href="#service">サービス</a>
+      <a href="#diag">模試診断</a>
+      <a href="#omoi">私たちの想い</a>
+      <a href="#info">特商法表記</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-mark">宅地建物取引士 試験対策</div>
+  <h1>合格に必要なものは、<br>この<em>一つ</em>で完成する。</h1>
+  <p class="hero-sub">目標管理、全科目の動画教材とテキスト、過去問約2,800問、そして弱点分析。合格までの道のりを、たった一つのアプリで。</p>
+  <div class="hero-btns">
+    <a href="https://takken-bearise.vercel.app" class="btn btn-main">無料で体験する</a>
+    <a href="#diag" class="btn btn-sub">3分の模試診断とは</a>
+  </div>
+</div>
+
+<!-- 完成バナー -->
+<div class="complete">
+  <div class="complete-lead">すべてが、ここにある</div>
+  <ul class="complete-list">
+    <li>目標管理</li>
+    <li>動画教材</li>
+    <li>テキスト教材</li>
+    <li>2,800問収録</li>
+    <li>弱点分析</li>
+  </ul>
+  <div class="complete-punch">この<u>アプリだけ</u>で、完成する。</div>
+</div>
+
+<!-- とは -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">ABOUT</div>
+    <h2 class="sec-title">宅建士 合格ナビ プレミアムとは</h2>
+    <p class="sec-intro">宅地建物取引士試験の合格に特化した学習アプリです。一人ひとりの弱点に合わせてやるべきことを明確にし、確実な合格をサポートします。過去問演習・テキスト・動画講義・実力診断・勉強管理まで、合格に必要なものをすべて一つに。忙しい社会人の方でも、スキマ時間で効率よく学習を進められます。</p>
+  </div>
+</section>
+
+<!-- サービス -->
+<section class="soft" id="service">
+  <div class="wrap">
+    <div class="eyebrow">SERVICE</div>
+    <h2 class="sec-title">私たちのサービス</h2>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-no">01</div>
+        <div class="svc-body">
+          <h3>実力診断で、弱点を特定する</h3>
+          <p>数問に答えるだけで、推定得点と弱点科目をその場で診断します。優先して潰すべき所が明確になるから、限られた時間をムダにしません。</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">02</div>
+        <div class="svc-body">
+          <h3>全科目の動画教材で、深く理解する</h3>
+          <p>つまずきやすい論点を、図解の動画講義で解説。読むだけでは頭に入りにくい所も、観て学べば記憶に残ります。全科目をこのアプリだけでカバーします。</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">03</div>
+        <div class="svc-body">
+          <h3>全科目のテキスト教材で、いつでも学ぶ</h3>
+          <p>全科目のフルテキストを収録。スマホでページをめくる感覚で、通勤中でも休憩中でも、好きなときにインプットできます。苦手な分野はブックマークして、いつでも見返せます。</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">04</div>
+        <div class="svc-body">
+          <h3>過去問 約2,800問で、定着させる</h3>
+          <p>平成10年〜令和7年の過去問を完全網羅。本試験の出題パターンを徹底的に演習し、合格の地力をつくります。解いた分だけ、実力になります。</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-no">05</div>
+        <div class="svc-body">
+          <h3>勉強管理で、走り切る</h3>
+          <p>学習時間・連続学習日数・科目別の到達度を見える化。試験日から逆算した今週のペースまで、一目で把握できます。挫折の隙を、与えません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 模試診断 訴求 -->
+<section class="diag" id="diag">
+  <div class="wrap">
+    <div class="eyebrow">FREE DIAGNOSIS</div>
+    <h2 class="sec-title">まずは、自分の現在地を知ることから。</h2>
+    <div class="diag-grid">
+      <div class="diag-text">
+        <h3>今のあなたの<em>合格可能性</em>を、<br>たった3分の模試診断で。</h3>
+        <p>無料の模試診断は、たった数問に答えるだけ。今この瞬間のあなたの推定得点と、合格ラインまでの距離を、その場でリアルタイムに判定します。</p>
+        <ul class="diag-points">
+          <li>今の<b>推定得点</b>と合格可能性がその場でわかる</li>
+          <li>科目ごとの<b>弱点</b>を自動で特定</li>
+          <li>試験日から逆算した<b>必要な学習ペース</b>も提示</li>
+          <li>登録は不要。<b>無料</b>ですぐに試せます</li>
+        </ul>
+      </div>
+      <div class="mock" aria-label="診断結果のイメージ">
+        <div class="mock-head">診断結果（イメージ）</div>
+        <div class="mock-score">
+          <div class="n">34<small>点</small></div>
+          <div class="c">推定得点（50点満点）</div>
+          <div class="mock-grade">合格ラインまで、あと一歩</div>
+        </div>
+        <div class="mock-subj">
+          <div class="mock-row"><span class="lbl">宅建業法</span><span class="bar"><i style="width:88%"></i></span><span class="pc">88%</span></div>
+          <div class="mock-row"><span class="lbl">権利関係</span><span class="bar"><i style="width:62%"></i></span><span class="pc">62%</span></div>
+          <div class="mock-row"><span class="lbl">法令上の制限</span><span class="bar"><i style="width:80%"></i></span><span class="pc">80%</span></div>
+          <div class="mock-row"><span class="lbl">税・その他</span><span class="bar"><i style="width:55%"></i></span><span class="pc">55%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 学習の流れ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">FLOW</div>
+    <h2 class="sec-title">合格までの、4つのステップ</h2>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-no">1</div>
+        <div class="flow-txt">
+          <h3>現状分析・実力診断</h3>
+          <p>まずは無料の模試診断で、現在地と弱点を把握。合格ラインまでの距離と、必要な学習ペースを確認します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-no">2</div>
+        <div class="flow-txt">
+          <h3>インプット（テキスト・動画）</h3>
+          <p>テキストと動画講義で、各科目の基礎を固めます。得点に直結する宅建業法から、優先して学びます。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-no">3</div>
+        <div class="flow-txt">
+          <h3>過去問演習で定着</h3>
+          <p>過去問約2,800問を繰り返し演習。弱点分析で見えた苦手分野を重点的に潰し、確実に得点力を高めます。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-no">4</div>
+        <div class="flow-txt">
+          <h3>総仕上げ・直前対策</h3>
+          <p>直近の過去問を時間を計って通しで解き、本番の時間配分を体に入れます。法改正・統計の最終確認まで抜かりなく。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 想い -->
+<section class="soft omoi" id="omoi">
+  <div class="wrap">
+    <div class="eyebrow">OUR MISSION</div>
+    <h2 class="sec-title">私たちの想い</h2>
+    <div class="omoi-body">
+      <p>宅建試験は、正しい順序で、正しい量を、正しく演習すれば、必ず手が届く試験です。けれど毎年、十分に努力したはずの人が、あと数点で涙をのんでいます。</p>
+      <p>その差を分けるのは、才能ではなく「環境」だと私たちは考えています。自分の弱点が見え、迷わず学べて、最後まで走り切れる。そんな環境さえあれば、合格はぐっと近づきます。</p>
+      <p>このアプリは、本気で合格を目指すあなたのために作りました。挫折の隙を与えず、合格まで伴走します。一緒に、合格を掴み取りましょう。</p>
+      <div class="omoi-sign">宅建士 合格ナビ プレミアム ／ BEARISE</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap">
+    <h2>その一歩が、合格への一歩。</h2>
+    <p>まずは無料の模試診断で、あなたの現在地を確かめてみてください。今いる場所がわかれば、進むべき道が見えてきます。</p>
+    <a href="https://takken-bearise.vercel.app" class="btn btn-main">無料で模試診断を受ける</a>
+  </div>
+</div>
+
+<!-- 特商法 -->
+<section class="info" id="info">
+  <div class="wrap">
+    <div class="eyebrow">LEGAL</div>
+    <h2 class="sec-title">特定商取引法に基づく表記</h2>
+    <dl class="info-table">
+      <div class="info-row"><dt>販売業者</dt><dd>BEARISE</dd></div>
+      <div class="info-row"><dt>代表者</dt><dd>大日方 輝人</dd></div>
+      <div class="info-row"><dt>所在地</dt><dd>大阪府柏原市法善寺1丁目4-16 大日方宛<br><small>※営業DMはお控えください</small></dd></div>
+      <div class="info-row"><dt>電話番号</dt><dd>080-3783-8093<br><small>※お問い合わせは原則メールにて承ります。ご請求があった場合は遅滞なく開示いたします。営業連絡はお控えください。</small></dd></div>
+      <div class="info-row"><dt>メールアドレス</dt><dd>bearise.official@gmail.com</dd></div>
+      <div class="info-row"><dt>販売URL</dt><dd>https://takken-bearise.vercel.app</dd></div>
+      <div class="info-row"><dt>提供内容</dt><dd>宅地建物取引士試験対策の学習アプリ「宅建士 合格ナビ プレミアム」の利用権</dd></div>
+      <div class="info-row"><dt>販売価格</dt><dd>330,000円（税込）</dd></div>
+      <div class="info-row"><dt>商品代金以外の必要料金</dt><dd>インターネット接続料金・通信料金等はお客様のご負担となります。銀行振込の場合の振込手数料はお客様のご負担となります。</dd></div>
+      <div class="info-row"><dt>お支払い方法</dt><dd>クレジットカード／銀行振込</dd></div>
+      <div class="info-row"><dt>代金のお支払い時期</dt><dd>クレジットカード：購入手続き時に決済が確定します。銀行振込：ご注文後、原則7日以内にお振込みください。</dd></div>
+      <div class="info-row"><dt>サービスの提供時期</dt><dd>クレジットカード決済の場合は決済完了後ただちに、銀行振込の場合は入金確認後ただちに、全機能をご利用いただけます。</dd></div>
+      <div class="info-row"><dt>返品・キャンセル（返金）</dt><dd>本商品はデジタルコンテンツであり、購入手続き完了後ただちに全機能がご利用可能となる性質上、購入後のお客様都合による返品・返金・キャンセルはお受けできません。ただし、当方の責に帰すべき重大な不具合がある場合は、個別に対応いたします。</dd></div>
+      <div class="info-row"><dt>動作環境</dt><dd>インターネットに接続されたスマートフォン・タブレット・パソコンと、最新のWebブラウザ（Safari、Google Chrome等）を推奨します。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">宅建士 合格ナビ プレミアム</div>
+  <div class="foot-links">
+    <a href="https://takken-bearise.vercel.app">アプリを開く</a>
+    <a href="#info">特定商取引法に基づく表記</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <div class="foot-copy">
+    © BEARISE　宅建士 合格ナビ プレミアム　All Rights Reserved.<br>
+    ※本サービスは個人の学習を支援するものであり、合格を保証するものではありません。
+  </div>
+</footer>
+
+</body>
+</html>
